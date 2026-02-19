@@ -1,0 +1,296 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #002035;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.business-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #002035;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== TOP NAV (Personal | Business | Wholesale) ===== */
+.top-nav {
+  width: 100%;
+  background: #001f1b;
+  font-size: 14px;
+}
+
+.container-nav {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item.active {
+  color: white;
+  border-bottom: 2px solid #12b76a;
+  padding-bottom: 4px;
+}
+
+.lang-btn {
+  border: 1px solid #12b76a;
+  background: transparent;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lang-btn:hover {
+  background: rgba(18, 183, 106, 0.1);
+}
+
+/* ===== MAIN NAV (Salam Menu Bar) ===== */
+.main-nav {
+  width: 100%;
+  background: #003e30;
+  border-top: 1px solid #0a5c4a;
+}
+
+.main-nav .container-nav {
+  height: 80px;
+}
+
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background: #12b76a;
+  border-radius: 0 16px 0 16px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Menu */
+.menu-items {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.menu-items span {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-items span:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coverage-link {
+  color: #12b76a;
+  font-weight: 600;
+}
+
+.coverage-link:hover {
+  color: #0ea95f;
+}
+
+/* ===== HERO SECTION (FIXED – MATCHES FIRST SCREENSHOT) ===== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background: #002035;
+  display: flex;
+  align-items: center;
+}
+
+/* Wider container like real Salam site */
+.container-hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+
+/* KEY FIX: Proper grid ratio */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+/* LEFT TEXT CONTENT */
+.hero-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: white;
+}
+
+.hero-subtitle {
+  margin-top: 22px;
+  font-size: 20px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Learn Button */
+.learn-btn {
+  margin-top: 36px;
+  background: #12b76a;
+  color: white;
+  border: none;
+  padding: 16px 42px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+  background: #0ea95f;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 22px;
+}
+
+/* RIGHT HERO IMAGE (CRITICAL FIX) */
+.hero-image {
+  display: flex;
+  justify-content: flex-end; /* pushes image to RIGHT */
+  align-items: center;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 900px; /* BIG like original Salam */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* SIDE ARROWS */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 42px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s;
+  user-select: none;
+}
+
+.nav-arrow:hover {
+  color: white;
+}
+
+.nav-arrow.left {
+  left: 30px;
+}
+
+.nav-arrow.right {
+  right: 30px;
+}
+
+/* BOTTOM DOT */
+.dot-indicator {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #12b76a;
+  border-radius: 50%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .hero-image img {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .container-nav,
+  .container-hero {
+    padding: 0 24px;
+  }
+}
