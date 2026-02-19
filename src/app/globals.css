@@ -1,46 +1,59 @@
 @import "tailwindcss";
 
-/* ===== EXACT FONT (from DevTools: transducer, sans-serif) ===== */
+/* ===== Transducer Font (Exact from DevTools) ===== */
 @font-face {
   font-family: "transducer";
-  src: url("/fonts/transducer.woff2") format("woff2");
+  src: url("/fonts/transducer.woff2") format("woff2"),
+       url("/fonts/transducer.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+/* Optional: Medium weight (many navbars use 500) */
+@font-face {
+  font-family: "transducer";
+  src: url("/fonts/transducer-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Global Font Apply (Important) ===== */
 html,
 body {
+  font-family: "transducer", sans-serif;
+  color: #2F2F2F;
   margin: 0;
   padding: 0;
-  font-family: "transducer", sans-serif;
-  color: #2F2F2F;
-  background: #ffffff;
 }
 
-/* Exact navbar typography reset */
-.navbar-text {
-  font-family: "transducer", sans-serif;
-  font-size: 12px; /* EXACT from inspector */
-  color: #2F2F2F;
+/* Make links look like original navbar */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-
-@keyframes scrollFloat {
-  0% {
-    transform: translateY(0px);
-    opacity: 0.9;
-  }
-  50% {
-    transform: translateY(14px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 0.9;
-  }
+/* Smooth font rendering (matches production sites) */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.animate-scrollFloat {
-  animation: scrollFloat 2.2s ease-in-out infinite;
+/* Prevent video flicker - disable hardware acceleration */
+video {
+  transform: none !important;
+  will-change: auto !important;
+  filter: blur(0) !important;
+}
+
+/* Force entire page into single composite layer */
+body {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+iframe {
+  position: fixed !important;
+  z-index: 999999 !important;
 }
