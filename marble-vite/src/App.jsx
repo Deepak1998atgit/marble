@@ -1,8 +1,18 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import Hero from './Hero'
 import Business from './Business'
 import NexivoWidget from './NexivoWidget'
+import BusinessWidget from './BusinessWidget'
 import './index.css'
+
+function WidgetManager() {
+  const location = useLocation();
+  
+  if (location.pathname === '/business') {
+    return <BusinessWidget />;
+  }
+  return <NexivoWidget />;
+}
 
 function App() {
   return (
@@ -15,7 +25,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/business" element={<Business />} />
       </Routes>
-      <NexivoWidget />
+      <WidgetManager />
     </BrowserRouter>
   )
 }
